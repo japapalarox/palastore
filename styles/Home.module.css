@@ -1,0 +1,159 @@
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg:      #1b2838;
+  --panel:   #16202d;
+  --panel2:  #0f1a24;
+  --border:  #2a3f5f;
+  --text:    #c7d5e0;
+  --text2:   #8f98a0;
+  --accent:  #a4d007;
+  --accent2: #66c0f4;
+}
+
+html, body { background: var(--bg); color: var(--text); font-family: 'Segoe UI', sans-serif; }
+
+.main {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 16px 48px;
+}
+
+/* Header */
+.header {
+  width: 100%;
+  max-width: 1200px;
+  text-align: center;
+  padding: 48px 24px 32px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 48px;
+}
+
+.logo {
+  font-size: 36px;
+  font-weight: 900;
+  color: var(--accent);
+  letter-spacing: 2px;
+}
+
+.tagline {
+  color: var(--text2);
+  font-size: 16px;
+  margin-top: 8px;
+}
+
+/* Grid */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 24px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+/* Card */
+.card {
+  background: var(--panel);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 28px 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--cor, #a4d007);
+  border-radius: 16px 16px 0 0;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--cor, #a4d007);
+  box-shadow: 0 8px 32px rgba(0,0,0,0.4);
+}
+
+.cardIcon { font-size: 36px; }
+
+.cardNome {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--cor, #a4d007);
+}
+
+.cardSub {
+  font-size: 13px;
+  color: var(--text2);
+  margin-top: -8px;
+}
+
+.cardDesc {
+  font-size: 14px;
+  color: var(--text2);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.cardPreco {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-top: 4px;
+}
+
+.preco {
+  font-size: 28px;
+  font-weight: 900;
+  color: var(--text);
+}
+
+.periodo {
+  font-size: 13px;
+  color: var(--text2);
+}
+
+.btnComprar {
+  display: block;
+  background: var(--cor, #a4d007);
+  color: #1b2838;
+  font-weight: 900;
+  font-size: 15px;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px;
+  border-radius: 10px;
+  margin-top: 8px;
+  transition: opacity 0.2s, transform 0.1s;
+  letter-spacing: 0.5px;
+}
+
+.btnComprar:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Footer */
+.footer {
+  margin-top: 56px;
+  text-align: center;
+  color: var(--text2);
+  font-size: 13px;
+  border-top: 1px solid var(--border);
+  padding-top: 24px;
+  width: 100%;
+  max-width: 1200px;
+}
+
+@media (max-width: 600px) {
+  .logo { font-size: 26px; }
+  .grid { grid-template-columns: 1fr; }
+}
