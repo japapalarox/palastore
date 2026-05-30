@@ -1,14 +1,3 @@
-:root {
-  --bg:      #1b2838;
-  --panel:   #16202d;
-  --panel2:  #0f1a24;
-  --border:  #2a3f5f;
-  --text:    #c7d5e0;
-  --text2:   #8f98a0;
-  --accent:  #a4d007;
-  --accent2: #66c0f4;
-}
-
 .main {
   min-height: 100vh;
   display: flex;
@@ -148,4 +137,4 @@
 @media (max-width: 600px) {
   .logo { font-size: 26px; }
   .grid { grid-template-columns: 1fr; }
-} 
+}
