@@ -13,13 +13,11 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        {/* Header */}
         <header className={styles.header}>
           <div className={styles.logo}>⚡ Palas System</div>
           <p className={styles.tagline}>Escolha seu plano e ative agora</p>
         </header>
 
-        {/* Grid de produtos */}
         <section className={styles.grid}>
           {PRODUTOS.map(produto => (
             <div key={produto.id} className={styles.card} style={{'--cor': produto.cor}}>
@@ -32,7 +30,7 @@ export default function Home() {
                 <span className={styles.periodo}>/ {produto.periodo}</span>
               </div>
               <a
-                href={`https://pay.perfectpay.com.br/pay/${produto.perfectpay_code}`}
+                href={produto.checkout_url || `https://pay.perfectpay.com.br/pay/${produto.perfectpay_code}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className={styles.btnComprar}
@@ -43,7 +41,6 @@ export default function Home() {
           ))}
         </section>
 
-        {/* Rodapé */}
         <footer className={styles.footer}>
           <p>🔒 Pagamento seguro via PerfectPay · Key enviada automaticamente após aprovação</p>
           <p style={{marginTop: 8, fontSize: 12, color: '#8f98a0'}}>
